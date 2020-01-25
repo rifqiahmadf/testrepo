@@ -1,4 +1,42 @@
+*{
+
+}
+
 h1, h2, h3, h4, h5, h6{
 	color: #32a8a0;
 	font-family: arial;
+	text-align: center;
+}
+
+#color-red{
+	color: red;
+}
+
+.color-blue{
+	color: blue;
+}
+
+.large{
+	font-size: 10px;
+	font-weight: bold;
+}
+
+button{
+	background-color: red;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 50px;
+}
+
+button:hover{
+	background-color: blue;
+	cursor: pointer;
+}
+
+h2.color-blue{
+	font-family: times new roman;
+}
+
+body{
+	background-image: url("../img/gambarkucing.jpg");
 }

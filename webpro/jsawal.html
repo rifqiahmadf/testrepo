@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tambah-tambahan</title>
+</head>
+<body>
+	<input type="number" name="" id="num1">
+	+
+	<input type="number" name="" id="num2">
+	=
+	<input type="number" name="" id="num3" disabled>
+	<br>
+	<button onclick="tambah()">Kalkulasi</button>
+
+
+	<script type="text/javascript">
+		function tambah(){
+			let angka1 = parseInt(document.getElementById('num1').value);
+			let angka2 = parseInt(document.getElementById('num2').value);
+			let angka3 = angka1 + angka2;
+			document.getElementById('num3').value = angka3;
+		}
+	</script>
+</body>
+</html>

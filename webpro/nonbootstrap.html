@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Non Bootstrap</title>
+</head>
+<body>
+	<h1>Form Pemesanan</h1>
+	<form action="">
+		<table>
+			<tr>
+				<td>Nama Pemesan: </td>
+				<td><input type="text" name="namaPemesan" placeholder="Nama Kamu"></td>
+			</tr>
+			<tr>
+				<td>Nomor HP Pemesan: </td>
+				<td><input type="number" name="hpPemesan"></td>
+			</tr>
+			<tr>
+				<td >Paket Makanan: </td>
+				<td><select>
+					<option value="PK1">Paket Kenyang 1</option>
+					<option value="PK2">Paket Kenyang 2</option>
+					<option value="PK3">Paket Kenyang 3</option>
+					<option value="PH1">Paket Hemat 1</option>
+					<option value="PH2">Paket Hemat 2</option>
+					<option value="PH3">Paket Hemat 3</option>
+					<option value="NONP" selected>Non Paket</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Pengiriman: </td>
+				<td><input type="radio" name="rbTempat" value="DiTempat">Di Tempat <br>
+					<input type="radio" name="rbTempat" value="Delivery">Delivery <br>
+				</td>
+			</tr>
+			<tr>
+				<td>Tambahan: </td>
+				<td><input type="checkbox" name="cbTambahan" value="JumboSize">Jumbo Size <br>
+					<input type="checkbox" name="cbTambahan" value="ExtraCheese">Extra Cheese <br>
+					<input type="checkbox" name="cbTambahan" value="ExtraSoda">Extra Soda <br>
+					<input type="checkbox" name="cbTambahan" value="VIP">VIP
+				</td>
+			</tr>
+			<tr>
+				<td>Catatan: </td>
+				<td>
+					<textarea name="taCatatan"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<button onclick="">Reset</button>
+					<button onclick="">Pesan</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
