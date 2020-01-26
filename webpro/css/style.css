@@ -25,11 +25,11 @@ button{
 	background-color: red;
 	padding-left: 10px;
 	padding-right: 10px;
-	margin: 50px;
+	margin: 10px;
 }
 
 button:hover{
-	background-color: blue;
+	background-color: #7e2de0;
 	cursor: pointer;
 }
 
