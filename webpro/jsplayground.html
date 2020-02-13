@@ -26,5 +26,25 @@
         <center><button onclick="clickMe()">Press Me!💦</button></center>
         <center><p id="clickme"></p></center>
         <script src="js/jsplayground.js"></script>
+
+        <br>
+        <center><h1>Let's Calculate</h1></center>
+        <center>
+            <input type="number" id="num1" style="width: 5em;">
+            <select name="" id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+            </select>
+            <input type="number" id="num2" style="width: 5em;">
+            =
+            <input type="number" id="num3" style="width: 5em;" disabled>
+        </center>
+        <br>
+        <center>
+            <button onclick="calculate()">GO!</button>
+            <button onclick="reset()">Reset</button>
+        </center>
     </body>
 </html>
