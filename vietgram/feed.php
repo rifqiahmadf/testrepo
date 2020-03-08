@@ -16,7 +16,14 @@
             header("location:index.php");
         }
     }
-    $dataPhoto = mysqli_query($mysqli,"select * from photo");
+    if(isset($_GET['Submit'])){
+        // echo "MSUK";
+        $dataPhoto = mysqli_query($mysqli,'SELECT * FROM photo WHERE caption ="'. $_GET['search'] .'" ');
+    }
+    else{
+        $dataPhoto = mysqli_query($mysqli,"select * from photo");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +40,7 @@
 
 <body>
 <?php
-    echo $_SESSION['username']." --- ".$_SESSION['email'];
+    // echo $_SESSION['username']." --- ".$_SESSION['email'];
 ?>
     <nav class="navigation">
         <div class="navigation__column">
@@ -44,7 +51,10 @@
         </div>
         <div class="navigation__column">
             <i class="fa fa-search"></i>
-            <input type="text" placeholder="Search">
+            <form action="feed.php" method="get">
+                <input type="text" placeholder="Search" name="search">
+                <input type="submit" value="Submit" name="Submit" hidden> 
+            </form>
         </div>
         <div class="navigation__column">
             <ul class="navigations__links">

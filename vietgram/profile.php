@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +52,7 @@
             </div>
             <div class="profile__column">
                 <div class="profile__title">
-                    <h3 class="profile__username">serranoarevalo</h3>
+                    <h3 class="profile__username"><?php echo $_SESSION['username'];?></h3>
                     <a href="edit-profile.php">Edit profile</a>
                     <i class="fa fa-cog fa-lg"></i>
                 </div>

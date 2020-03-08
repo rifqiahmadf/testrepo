@@ -1,5 +1,49 @@
 <?php
     session_start();
+    include('config.php');
+    $result = mysqli_query($mysqli, 'SELECT * FROM profile WHERE username = "'.$_SESSION['username'].'"; ');
+    $user = mysqli_fetch_array($result);
+    $name = $user['name'];
+    $username = $user['username'];
+    $website = $user['website'];
+    $bio = $user['bio'];
+    $email = $user['email'];
+    $phonenumber = $user['phone'];
+    $gender = $user['gender'];
+
+    if(isset($_POST['Submit'])){
+        $name = $_POST['name'];
+        $username = $_POST['username'];
+        $website = $_POST['website'];
+        $bio = $_POST['bio'];
+        $email = $_POST['email'];
+        $phonenumber = $_POST['phonenumber'];
+        $gender = $_POST['gender'];
+        $result = mysqli_query($mysqli, 'UPDATE profile SET username="'.$username.'", email="'.$email.'", name="'.$name.'", website="'.$website.'", bio="'.$bio.'", phone="'.$phonenumber.'", gender="'.$gender.'"; ');
+        // header('location: profile.php');
+        // echo 'UPDATE profile SET email="'.$email.'", name="'.$name.'", website="'.$website.'", bio="'.$bio.'", phone="'.$phonenumber.'", gender="'.$gender.'" WHERE username = "'.$_SESSION['username'].'"; '; 
+    }
+
+    // echo $user['name'];
+    // if(isset($_POST['Submit'])){
+    //     $name = $_POST['name'];
+    //     $username = $_POST['email'];
+    //     $website = $_POST['website'];
+    //     $bio = $_POST['bio'];
+    //     $email = $_POST['email'];
+    //     $phonenumber = $_POST['phonenumber'];
+    //     $gender = $_POST['gender'];
+    // }
+    // else{
+    //     $name = "";
+    //     $username = $_SESSION['username'];
+    //     $website = "";
+    //     $bio = "";
+    //     $email = $_SESSION['email'];
+    //     $phonenumber = "";
+    //     $gender = "";
+    // }
+   
 
 ?>
 
@@ -54,34 +98,34 @@
                 </div>
                 <h4 class="edit-profile__username"><?php echo $_SESSION['username']; ?></h4>
             </header>
-            <form action="edit-profile.php" class="edit-profile__form">
+            <form action="edit-profile.php" method="post" class="edit-profile__form">
                 <div class="form__row">
                     <label for="full-name" class="form__label">Name:</label>
-                    <input id="full-name" type="text" class="form__input" />
+                    <input id="full-name" type="text" class="form__input" name="name" value="<?php echo $name; ?>" />
                 </div>
                 <div class="form__row">
                     <label for="user-name" class="form__label">Username:</label>
-                    <input id="user-name" type="text" class="form__input" value="<?php echo $_SESSION['username']; ?>" />
+                    <input id="user-name" type="text" class="form__input" value="<?php echo $username;?>" name="username" />
                 </div>
                 <div class="form__row">
                     <label for="website" class="form__label">Website:</label>
-                    <input id="website" type="url" class="form__input" />
+                    <input id="website" type="text" class="form__input" name="website" value="<?php echo $website; ?>"/>
                 </div>
                 <div class="form__row">
                     <label for="bio" class="form__label">Bio:</label>
-                    <textarea id="bio"></textarea>
+                    <textarea id="bio" name="bio"><?php echo $bio;?></textarea>
                 </div>
                 <div class="form__row">
                     <label for="email" class="form__label">Email:</label>
-                    <input id="email" type="email" class="form__input" value="<?php echo $_SESSION['email']; ?>"/>
+                    <input id="email" type="email" class="form__input" value="<?php echo $email;?>" name="email"/>
                 </div>
                 <div class="form__row">
                     <label for="phone" class="form__label">Phone Number:</label>
-                    <input id="phone" type="tel" class="form__input" />
+                    <input id="phone" type="tel" class="form__input" name="phonenumber" value="<?php echo $phonenumber; ?>"/>
                 </div>
                 <div class="form__row">
                     <label for="gender" class="form__label">Gender:</label>
-                    <select id="gender">
+                    <select id="gender" name="gender">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="cant">Can't remember</option>
@@ -112,12 +156,5 @@
             <span class="footer__copyright">© 2017 Vietgram</span>
         </div>
     </footer>
-
-    <?php
-        if(isset($_POST['Submit'])){
-
-        }
-
-    ?>
 </body>
 </html>
